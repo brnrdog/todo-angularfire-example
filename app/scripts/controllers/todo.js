@@ -11,6 +11,11 @@ angular.module('singularPracticeApp')
       $scope.todoText = '';
     };
 
+    $scope.toggle = function (id) {
+      var todo = $scope.todos[id];
+      todo.done = !todo.done;
+      $scope.todos.$save(id);
+    };
 
     $scope.remaining = function () {
       var count = -11;
@@ -21,10 +26,6 @@ angular.module('singularPracticeApp')
     };
 
     $scope.clear = function (id) {
-      // console.log(arg);
-      angular.forEach($scope.todos, function(todo){
-        $scope.todos.$remove(id);
-        // console.log(todo.done);
-      });
+      $scope.todos.$remove(id);
     };
   }]);
