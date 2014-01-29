@@ -3,7 +3,7 @@
   <span>{{remaining()}} todos left.</span>
   <ul>
     <li ng-repeat="(id, todo) in todos">
-      <input type="checkbox" ng-click="toggle(id)" ng-model="todo.done">
+      <input type="checkbox" ng-model="todo.done">
       <span ng-if="todo.done" style="color: #ddd;">{{todo.text}}</span>
       <span ng-if="todo.done == false">{{todo.text}}</span>
       <small ng-if="todo.done"><a href="" ng-click="clear(id)">clear</a></small>
